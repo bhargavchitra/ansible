@@ -9,4 +9,3 @@
    -name: print variables
     ansible.builtin.debug:
      msg: "course is: {{ COURSE }}, Trainer is: {{ TRAINER }}"
-     
