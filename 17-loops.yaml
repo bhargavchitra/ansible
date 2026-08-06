@@ -1,17 +1,13 @@
-- name: demo on installing packages
+- name: install packages
   hosts: local
   connection: local
-  become: yes 
-  task: 
+  become: yes
+  tasks:
   - name: install package
     ansible.builtin.package:
-     name: {{ item }}
-     state: present 
+      name: "{{ item }}"
+      state: present
     loop:
     - mysql
-    - nginx 
-    - zip 
-
-
-
-
+    - nginx
+    - zip
