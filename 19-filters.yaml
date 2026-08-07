@@ -4,7 +4,6 @@
   vars:
     topics: linux, shell, ansible, terraform
     course: "DevOps with Ansible"
-    myIp: "192.23.89.123"
     tagsMap:
       name: ansible
       project: roboshop
@@ -47,3 +46,11 @@
   - name: convert YAML to JSON
     ansible.builtin.debug:
       msg: "{{ student_yaml | to_nice_json  }}"
+
+  - name: convert to upper case 
+    ansible.builtin.debug:
+     msg: "{{ course | upper }}"
+
+  - name: convert to lower case 
+    ansible.builtin.debug:
+     msg: "{{ course | lower }}"
