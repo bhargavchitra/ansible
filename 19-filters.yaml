@@ -4,7 +4,7 @@
   vars:
     topics: linux, shell, ansible, terraform
     course: "DevOps with Ansible"
-    myIP: 246.567.890.287
+    myIp: "246.567.890.287"
     tagsMap:
       name: ansible
       project: roboshop
@@ -39,7 +39,7 @@
   - name: convert list to map
     ansible.builtin.debug:
       msg: "{{ tagsList | items2dict }}"
-  
+
   - name: read students yaml
     ansible.builtin.set_fact: # setting the variable
       student_yaml: "{{ lookup('file', 'students.yaml' ) | from_yaml }}"
@@ -48,17 +48,14 @@
     ansible.builtin.debug:
       msg: "{{ student_yaml | to_nice_json  }}"
 
-  - name: convert to upper case 
+  - name: convert to upper case
     ansible.builtin.debug:
-     msg: "{{ course | upper }}"
+      msg: "{{ course | upper }}"
 
-  - name: convert to lower case 
+  - name: convert to lower case
     ansible.builtin.debug:
-     msg: "{{ course | lower }}"
+      msg: "{{ course | lower }}"
 
   - name: check ipv4
     ansible.builtin.debug:
-     msg: "{{ myIp | ansible.utils.ipv4 }}"
-
-
-
+      msg: "{{ myIp | ansible.utils.ipv4 }}"
