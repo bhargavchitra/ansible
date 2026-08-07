@@ -54,3 +54,6 @@
   - name: convert to lower case 
     ansible.builtin.debug:
      msg: "{{ course | lower }}"
+
+
+
